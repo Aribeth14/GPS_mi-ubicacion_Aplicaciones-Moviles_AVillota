@@ -1,20 +1,47 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Mis lugares</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Ubicación</ion-card-subtitle>
+      <ion-card-title>Mi sitio en el mapa</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <a class="enlace" [href]="urlUbicacion" target="_blank">
+        <ion-icon name="location-outline"></ion-icon>
+        Abrir en Google Maps
+      </a>
+      <ion-button fill="outline" expand="block" (click)="guardarUbicacion()">
+        <ion-icon slot="start" name="save-outline"></ion-icon>
+        Guardar ubicación en .txt
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Ruta</ion-card-subtitle>
+      <ion-card-title>De mi casa al parque</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <a class="enlace" [href]="urlRuta" target="_blank">
+        <ion-icon name="navigate-outline"></ion-icon>
+        Ver ruta en Google Maps
+      </a>
+      <ion-button fill="outline" expand="block" (click)="guardarRuta()">
+        <ion-icon slot="start" name="save-outline"></ion-icon>
+        Guardar ruta en .txt
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  @if (mensaje) {
+    <p class="mensaje">{{ mensaje }}</p>
+  }
+
 </ion-content>
