@@ -1,0 +1,7 @@
+{
+  "name": "gps-rutas",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
